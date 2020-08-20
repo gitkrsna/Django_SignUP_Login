@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: django-gst-field
+Version: 0.0.3
+Summary: GST and PAN number field for django models.
+Home-page: https://github.com/jinchuuriki91/django-gst-field
+Author: Gandhar Pednekar
+Author-email: gandhar.pednekar15@gmail.com
+License: MIT
+Description: # django-gst-field
+        
+        A Django library which provides model and form fields for `Goods and Services Tax` and `Permanent Account Number`
+        
+        Includes:
+        
+         - `GSTField`, form and model field
+         - `PANField`, form and model field
+        
+        ## Installation
+        ```
+        pip install django-gst-field
+        ```
+        
+        ### Basic usage
+        
+        Add `gst_field` to the list of the installed apps in Django `settings.py` file:
+        
+        ```python
+        INSTALLED_APPS = [
+            ...
+            'gst_field',
+            ...
+        ]
+        ```
+        
+        ### Model usage
+        
+        ```python
+        from django.conf import settings
+        from django.db.models import ForeignKey, CASCADE, Model
+        from gst_field.modelfields import GSTField, PANField
+        
+        class Tax(Model):
+            user = ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE)
+            gstin = GSTField()
+            pan = PANField()
+        ```
+Keywords: django orm python
+Platform: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
