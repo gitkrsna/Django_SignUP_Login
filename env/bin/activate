@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/krishna/projects/env"
+VIRTUAL_ENV="/home/krishna/projects/cloudxlab/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
